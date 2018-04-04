@@ -9,6 +9,8 @@ import { SettingsPage } from '../pages/quotes/settings/settings';
 import { ComponentsIndepthPage } from '../pages/components-indepth/components-indepth';
 import { CodeGamePage } from '../pages/code-game/code-game';
 import { RecipesTabsPage } from '../pages/recipes/recipes-tabs/recipes-tabs';
+import { SigninPage } from '../pages/recipes/signin/signin';
+import { SignupPage } from '../pages/recipes/signup/signup';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,6 +22,8 @@ export class MyApp {
   componentsIndepthPage = ComponentsIndepthPage;
   codeGamePage = CodeGamePage;
   recipesTabsPage = RecipesTabsPage;
+  signinPage = SigninPage;
+  signupPage = SignupPage;
 
   @ViewChild('nav') nav: NavController;
 
@@ -35,6 +39,10 @@ export class MyApp {
   onLoad(page: any) {
     this.nav.setRoot(page);
     this.menuCtrl.close();
+  }
+
+  onLogout() {
+
   }
 
 }

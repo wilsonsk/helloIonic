@@ -25,9 +25,27 @@
         </button>
       </ion-item>
       <ion-item>
+        <button ion-button (click)="onLoad(signinPage)">
+          <ion-icon name="log-in"></ion-icon>
+          <h3 padding>Sign In</h3>
+        </button>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)="onLoad(signupPage)">
+          <ion-icon name="person"></ion-icon>
+          <h3 padding>Sign Up</h3>
+        </button>
+      </ion-item>
+      <ion-item>
         <button ion-button (click)="onLoad(recipesTabsPage)">
-          <ion-icon name="pizza"></ion-icon>
+          <ion-icon name="book"></ion-icon>
           <h3 padding>Recipes App</h3>
+        </button>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)="onLogout()">
+          <ion-icon name="log-out"></ion-icon>
+          <h3 padding>Log Out</h3>
         </button>
       </ion-item>
       <ion-item>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, ActionSheetController, AlertController, ToastController } from 'ionic-angular';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
+import { Recipe } from '../models/recipe.interface';
+
 import { RecipesService } from '../../../services/recipes';
 
 @Component({
@@ -12,6 +14,8 @@ export class ManageRecipePage implements OnInit {
   mode: 'New';
   selectOptions =['Easy', 'Medium', 'Hard'];
   recipeForm: FormGroup;
+  recipeIndex: number;
+  recipe: Recipe;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private actionSheetController: ActionSheetController, private alertCtrl: AlertController,
@@ -20,15 +24,27 @@ export class ManageRecipePage implements OnInit {
 
   ngOnInit() {
     this.mode = this.navParams.get('mode');
+    if(this.mode == 'Edit') {
+      this.recipeIndex = this.navParams.get('index');
+      this.recipe = this.recipesService.getRecipe(this.recipeIndex);
+    }
     this.initializeForm();
   }
 
-  private initializeForm() {
+  private initializeForm(title=null, description=null,difficulty='Medium',ingredients=[]) {
+    if(this.mode == 'Edit') {
+      title = this.recipe.title;
+      description = this.recipe.description;
+      difficulty = this.recipe.difficulty;
+      for (let ingredient of this.recipe.ingredients) {
+        ingredients.push(new FormControl(ingredient.name, Validators.required));
+      }
+    }
     this.recipeForm = new FormGroup({
-      'title': new FormControl(null, Validators.required),
-      'description': new FormControl(null, Validators.required),
-      'difficulty': new FormControl(this.selectOptions[1], Validators.required),
-      'ingredients': new FormArray([])
+      'title': new FormControl(title, Validators.required),
+      'description': new FormControl(description, Validators.required),
+      'difficulty': new FormControl(difficulty, Validators.required),
+      'ingredients': new FormArray(ingredients)
     });
   }
 
@@ -44,8 +60,11 @@ export class ManageRecipePage implements OnInit {
         return {name: name, quantity: 1};
       });
     }
-
-    this.recipesService.addRecipe(value.title, value.description, value.difficulty, ingredients);
+    if(this.mode == 'Edit') {
+      this.recipesService.updateRecipe(this.recipeIndex, value.title, value.description, value.difficulty, ingredients);
+    } else {
+      this.recipesService.addRecipe(value.title, value.description, value.difficulty, ingredients);
+    }
     this.recipeForm.reset();
     this.navCtrl.popToRoot();
   }

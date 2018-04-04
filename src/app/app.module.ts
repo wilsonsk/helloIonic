@@ -38,6 +38,9 @@ import { RecipePage } from '../pages/recipes/recipe/recipe';
 import { ShoppingListPage } from '../pages/recipes/shopping-list/shopping-list';
 import { RecipesTabsPage } from '../pages/recipes/recipes-tabs/recipes-tabs';
 import { ManageRecipePage } from '../pages/recipes/manage-recipe/manage-recipe';
+import { SigninPage } from '../pages/recipes/signin/signin';
+import { SignupPage } from '../pages/recipes/signup/signup';
+
 
 // Custom Components - Loaded in declarations only.
 // - WARNING - NOT LOADED IN entryComponents
@@ -82,7 +85,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecipePage,
     ShoppingListPage,
     RecipesTabsPage,
-    ManageRecipePage
+    ManageRecipePage,
+    SigninPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -114,7 +119,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecipePage,
     ShoppingListPage,
     RecipesTabsPage,
-    ManageRecipePage
+    ManageRecipePage,
+    SigninPage,
+    SignupPage
   ],
   providers: [
     UserService,
