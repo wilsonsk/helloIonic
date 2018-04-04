@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>List Component</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item>Button Ion Item</button>
+    <ion-item>Normal Ion Item</ion-item>
+    <ion-item tappable>Tappable Ion Item</ion-item>
+    <ion-item>
+      <ion-icon name="star"></ion-icon>
+      Icon with Text
+    </ion-item>
+    <ion-item>
+      <ion-icon name="star" item-left></ion-icon>
+      Icon (item-left) with Text
+    </ion-item>
+    <ion-item>
+      <ion-icon name="star" item-right></ion-icon>
+      Icon (item-right) with Text
+    </ion-item>
+    <ion-item>
+      <ion-icon name="star" item-right></ion-icon>
+      <p>Icon (item-right) with p tag</p>
+    </ion-item>
+    <ion-item>
+      <h1>Header 1</h1>
+      <ion-icon name="star" item-right></ion-icon>
+      <p>Icon (item-right) with p tag and header</p>
+    </ion-item>
+    <ion-item>
+      <h1>Header 1</h1>
+      <ion-icon name="star" item-left></ion-icon>
+      <p>Icon (item-left) with p tag and header</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list no-lines>
+    <ion-item>List with no lines</ion-item>
+    <ion-item>List with no lines</ion-item>
+    <ion-item>List with no lines</ion-item>
+  </ion-list>
+
+  <ion-list inset>
+    <ion-item>List with inset</ion-item>
+    <ion-item>List with inset</ion-item>
+    <ion-item>List with inset</ion-item>
+  </ion-list>
+
+  <ion-item-group>
+    <ion-item>Ion Item Group: List Group Items and Headers</ion-item>
+    <ion-item-divider>A</ion-item-divider>
+      <ion-item>Apples</ion-item>
+      <ion-item>Avocados</ion-item>
+    <ion-item-divider>B</ion-item-divider>
+      <ion-item>Berries</ion-item>
+      <ion-item>Bananas</ion-item>
+  </ion-item-group>
+
+  <ion-list>
+    <ion-list-header>
+      Ion List Header
+    </ion-list-header>
+    <ion-item>1</ion-item>
+    <ion-item>2</ion-item>
+    <ion-item>3</ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      Ion List Header
+    </ion-list-header>
+    <ion-item>1</ion-item>
+    <ion-item>2</ion-item>
+    <ion-item>3</ion-item>
+  </ion-list>
+
+  <h1>Reorderable List</h1>
+  <ion-list reorder="true" (ionItemReorder)="reorderItems($event)">
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+
+</ion-content>

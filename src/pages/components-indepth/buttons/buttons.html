@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon color="primary" name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Components Indepth</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          A normal button
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="primary">Click Me</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Another button
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="secondary">Click Me</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Outline button
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="secondary" outline>Click Me</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Clear button
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="secondary" clear>Click Me</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Round button
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="secondary" round>Click Me</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Display block button (no longer inline; takes full width)
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="secondary" block>Click Me</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Full button
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onTogglePadding()" color="secondary" full>Test Me</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Small button
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="danger" small>Click Me</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Large button
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="danger" large>Click Me</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Icon only button
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="danger" large ion-only>
+            <ion-icon name="home"></ion-icon>
+          </button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Icon and text button ugly and wrong
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="danger" large>
+            <ion-icon name="home"></ion-icon>
+            Home
+          </button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item text-center>
+      <ion-card>
+        <ion-card-header>
+          Icon and text button correct via config and define icon placement
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button (click)="onClick()" color="danger" large icon-left>
+            <ion-icon name="home"></ion-icon>
+            Home
+          </button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

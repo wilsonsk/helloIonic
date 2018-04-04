@@ -1,0 +1,13 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Trip Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1 *ngIf="tripDetails">Trip Name: {{ tripDetails.name }}</h1>
+  <h1 *ngIf="tripDetails">Trip Address: {{ tripDetails.address }}</h1>
+</ion-content>

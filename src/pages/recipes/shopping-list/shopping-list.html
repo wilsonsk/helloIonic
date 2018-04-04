@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon color="primary" name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Shopping List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- Template Driven Approach to user inputs -->
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onAddIngredient(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label float>Ingredient Name</ion-label>
+        <ion-input type="text" name="ingredientName" placeholder="sweet potatos" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label float>Amount</ion-label>
+        <ion-input type="number" name="ingredientQuantity" placeholder="6" ngModel required></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button type="submit" block [disabled]="!f.valid">Add</button>
+  </form>
+  <!-- <ion-list>
+    <ion-item *ngFor="let ingredient of ingredients; let i = index;" (press)="onRemoveIngredient(i)">
+      <ion-card>
+        <ion-card-header>
+          {{ ingredient.name }} ({{ ingredient.quantity }})
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+  </ion-list> -->
+  <ion-list>
+    <ion-item-sliding *ngFor="let ingredient of ingredients;">
+      <ion-item>
+        <ion-card>
+          <ion-card-header>
+            {{ ingredient.name }} ({{ ingredient.quantity }})
+          </ion-card-header>
+        </ion-card>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="onRemoveIngredient(ingredient)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

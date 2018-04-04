@@ -1,0 +1,9 @@
+page-quotes {
+  .author {
+    color: #ccc;
+
+    &:before {
+      content: '- ';
+    }
+  }
+}

@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon color="primary" name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Code Game</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row text-center>
+      <ion-col>
+        <h1>Enter the correct pattern</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center>
+      <ion-col *ngIf="!didWin()">
+        Tap twice, press four times
+      </ion-col>
+      <ion-col *ngIf="didWin()">
+        You Won!
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <hr>
+          <ion-item>
+            Tapped: {{ numTaps }}
+          </ion-item>
+          <ion-item>
+            Pressed: {{ numPresses }}
+          </ion-item>
+        </ion-list>
+        <hr>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center>
+      <ion-col col-4>
+        <button ion-button color="danger" full (click)="onReset()">
+          Reset All
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button color="danger" full (click)="onReset('tap')">
+          Reset "Taps"
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button color="danger" full (click)="onReset('press')">
+          Reset "Presses"
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center>
+      <ion-col col-6>
+        <button ion-button full color="secondary" class="game-button" (tap)=onTap()>
+          Tap Here
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button full class="game-button" (press)="onPress()">
+          Press Here
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

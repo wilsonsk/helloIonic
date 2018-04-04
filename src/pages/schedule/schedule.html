@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ username }}'s Schedule</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+  <h1 (click)="tripDetails({name: trip.name, address: trip.address})" *ngFor="let trip of trips">Trip Name: {{trip.name}} | Address: {{ trip.address }}</h1>
+
+
+</ion-content>

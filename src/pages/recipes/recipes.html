@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon color="primary" name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onNewRecipe()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Recipes App</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let recipe of recipes; let i = index;" >
+      <button ion-item (click)="onLoadRecipe()">
+        <h2>{{ recipe.title }}</h2>
+        <ion-note>{{ recipe.difficulty }}</ion-note>
+      </button>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="onRemoveRecipe(recipe)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

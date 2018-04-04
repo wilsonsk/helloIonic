@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon color="primary" name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Favorite Quotes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let quote of quotes" >
+      <ion-item>
+        <!-- <ion-card (click)="onViewQuote(quote)" [color]="getBackground()"> -->
+        <ion-card (click)="onViewQuote(quote)" color="quoteBackground" [ngClass]="{alt: isAltBackground()}">
+          <ion-card-header>
+            <h1>{{ quote.person }}</h1>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ quote.text }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="onRemoveFromFavorites(quote)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

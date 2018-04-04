@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Gestures</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          Touchable Element (div)
+        </ion-card-header>
+        <ion-card-content>
+          <div class="gestures" (click)="onClick()">
+            <h1>Touchable Element</h1>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          Tap Element (tap) listener
+        </ion-card-header>
+        <ion-card-content>
+          <div class="gestures" (tap)="onTap()">
+            <h1>Tappable Element</h1>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          Long Press Element (press) listener
+        </ion-card-header>
+        <ion-card-content>
+          <div class="gestures" (press)="onPress()">
+            <h1>Pressable Element</h1>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          Two (press), (click) listener
+        </ion-card-header>
+        <ion-card-content>
+          <div class="gestures" (press)="onPress()" (click)="onClick()">
+            <h1>Try Element</h1>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          All three (press), (tap), (click) listener
+        </ion-card-header>
+        <ion-card-content>
+          <div class="gestures" (press)="onPress()" (tap)="onTap()" (click)="onClick()">
+            <h1>Try Element</h1>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

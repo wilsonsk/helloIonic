@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon color="primary" name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Drively App</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <h1>Pick an App</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-sm-6 offset-sm-3>
+        <button ion-button large full [navPush]="loginPage">Login App</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-sm-6 offset-sm-3>
+        <button ion-button large full [navPush]="tabsPage">Quote App</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-sm-6 offset-sm-3>
+        <button ion-button large full [navPush]="recipesTabsPage">Recipes App</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-sm-6 offset-sm-3>
+        <button ion-button large full [navPush]="componentsIndepthPage" class="font-size-18">Components Indepth App</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-sm-6 offset-sm-3>
+        <button ion-button large full [navPush]="codeGamePage">Code Game</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+
+<ion-footer padding>
+
+</ion-footer>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>User Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <label for="user-name">User Name</label>
+  <input type="text" (keyup)="onUsername($event)">
+  <label for="user-name">Password</label>
+  <input type="text" (keyup)="onPassword($event)">
+  <hr>
+  <button ion-button (click)="onLogin()">Login</button>
+  <button ion-button navPop>Go Back</button>
+</ion-content>
