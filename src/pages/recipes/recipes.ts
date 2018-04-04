@@ -36,8 +36,8 @@ export class RecipesPage {
   }
 
   onGetRecipePage(recipe: Recipe) {
-    this.index = this.recipes.indexOf(recipe);
-    this.navCtrl.push(RecipePage, {index: this.index});
+    let index = this.recipes.indexOf(recipe);
+    this.navCtrl.push(RecipePage, {index: index});
   }
 
 }
