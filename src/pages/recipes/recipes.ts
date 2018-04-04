@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { ManageRecipePage } from './manage-recipe/manage-recipe';
+import { RecipePage } from './recipe/recipe';
 
 import { Recipe } from './models/recipe.interface';
 import { RecipesService } from '../../services/recipes';
@@ -29,9 +30,14 @@ export class RecipesPage {
   }
 
   onRemoveRecipe(recipe: Recipe) {
-    var index = this.recipes.indexOf(recipe);
+    let index = this.recipes.indexOf(recipe);
     this.recipesService.removeRecipe(index);
     this.onLoadRecipe();
+  }
+
+  onGetRecipePage(recipe: Recipe) {
+    this.index = this.recipes.indexOf(recipe);
+    this.navCtrl.push(RecipePage, {index: this.index});
   }
 
 }

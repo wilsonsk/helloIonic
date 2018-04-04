@@ -12,6 +12,10 @@ export class RecipesService {
     return this.recipes.slice();
   }
 
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
   updateRecipe(index: number, title: string, description: string, difficulty: string, ingredients: Ingredient[]) {
     this.recipes[index] = new Recipe(title, description, difficulty, ingredients);
   }

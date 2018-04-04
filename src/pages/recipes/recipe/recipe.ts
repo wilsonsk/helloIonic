@@ -1,25 +1,26 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the RecipePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Recipe } from '../models/recipe.interface';
+import { RecipesService } from '../../../services/recipes';
 
-@IonicPage()
 @Component({
   selector: 'page-recipe',
   templateUrl: 'recipe.html',
 })
-export class RecipePage {
+export class RecipePage implements OnInit{
+  recipe: Recipe;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ngOnInit() {
+    let index = this.navParams.get('index');
+    this.onLoadRecipe(index);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RecipePage');
+  constructor(public navCtrl: NavController, public navParams: NavParams, private recipesSerivce: RecipesService) {
+  }
+
+  onLoadRecipe(index: number) {
+    this.recipe = this.recipesSerivce.getRecipe(index);
   }
 
 }
