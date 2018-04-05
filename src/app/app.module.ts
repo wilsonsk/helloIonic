@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { HttpModule } from '@angular/http';
 
 // Boilerplate Pages
 import { AboutPage } from '../pages/about/about';
@@ -40,7 +41,8 @@ import { RecipesTabsPage } from '../pages/recipes/recipes-tabs/recipes-tabs';
 import { ManageRecipePage } from '../pages/recipes/manage-recipe/manage-recipe';
 import { SigninPage } from '../pages/recipes/signin/signin';
 import { SignupPage } from '../pages/recipes/signup/signup';
-
+import { ShoppingListOptionsPage } from '../pages/recipes/shopping-list/shopping-list-options/shopping-list-options';
+import { RecipesOptionsPage } from '../pages/recipes/recipes-options/recipes-options';
 
 // Custom Components - Loaded in declarations only.
 // - WARNING - NOT LOADED IN entryComponents
@@ -53,7 +55,7 @@ import { FavoritesService } from '../services/favorites';
 import { SettingsService } from '../services/settings';
 import { ShoppingListService } from '../services/shopping-list';
 import { RecipesService } from '../services/recipes';
-
+import { AuthService } from '../services/auth';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -87,10 +89,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecipesTabsPage,
     ManageRecipePage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    ShoppingListOptionsPage,
+    RecipesOptionsPage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -121,7 +126,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecipesTabsPage,
     ManageRecipePage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    ShoppingListOptionsPage,
+    RecipesOptionsPage
   ],
   providers: [
     UserService,
@@ -129,6 +136,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SettingsService,
     ShoppingListService,
     RecipesService,
+    AuthService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

@@ -12,49 +12,49 @@
           <h3 padding>Home</h3>
         </button>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="isAuthenticated">
         <button ion-button (click)="onLoad(tabsPage)">
           <ion-icon name="quote"></ion-icon>
           <h3 padding>Quotes</h3>
         </button>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="isAuthenticated">
         <button ion-button (click)="onLoad(codeGamePage)">
           <ion-icon name="game-controller-a"></ion-icon>
           <h3 padding>Code Game</h3>
         </button>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="!isAuthenticated">
         <button ion-button (click)="onLoad(signinPage)">
           <ion-icon name="log-in"></ion-icon>
           <h3 padding>Sign In</h3>
         </button>
       </ion-item>
-      <ion-item>
+      <ion-item  *ngIf="!isAuthenticated">
         <button ion-button (click)="onLoad(signupPage)">
           <ion-icon name="person"></ion-icon>
           <h3 padding>Sign Up</h3>
         </button>
       </ion-item>
-      <ion-item>
-        <button ion-button (click)="onLoad(recipesTabsPage)">
+      <ion-item *ngIf="isAuthenticated">
+        <button ion-button (click)="onLoad(rootPage)">
           <ion-icon name="book"></ion-icon>
           <h3 padding>Recipes App</h3>
         </button>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="isAuthenticated">
         <button ion-button (click)="onLogout()">
           <ion-icon name="log-out"></ion-icon>
           <h3 padding>Log Out</h3>
         </button>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="isAuthenticated">
         <button ion-button (click)="onLoad(componentsIndepthPage)">
           <ion-icon name="cog"></ion-icon>
           <h3 padding>Components Indepth</h3>
         </button>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="isAuthenticated">
         <button ion-button (click)="onLoad(settingsPage)">
           <ion-icon name="settings"></ion-icon>
           <h3 padding>Settings</h3>
@@ -65,4 +65,4 @@
 </ion-menu>
 <!-- content of menu item selected, should be rendered
 in the below navigation stack -->
-<ion-nav [root]="recipesTabsPage" #nav></ion-nav>
+<ion-nav [root]="rootPage" #nav></ion-nav>
