@@ -13,6 +13,7 @@ import { CodeGamePage } from '../pages/code-game/code-game';
 import { RecipesTabsPage } from '../pages/recipes/recipes-tabs/recipes-tabs';
 import { SigninPage } from '../pages/recipes/signin/signin';
 import { SignupPage } from '../pages/recipes/signup/signup';
+import { PlacesPage } from '../pages/places/places';
 
 import { AuthService } from '../services/auth';
 
@@ -28,6 +29,7 @@ export class MyApp {
   recipesTabsPage = RecipesTabsPage;
   signinPage = SigninPage;
   signupPage = SignupPage;
+  placesPage = PlacesPage;
   isAuthenticated = false;
 
   rootPage: any = this.recipesTabsPage;

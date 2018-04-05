@@ -44,6 +44,16 @@ import { SignupPage } from '../pages/recipes/signup/signup';
 import { ShoppingListOptionsPage } from '../pages/recipes/shopping-list/shopping-list-options/shopping-list-options';
 import { RecipesOptionsPage } from '../pages/recipes/recipes-options/recipes-options';
 
+// Places App Pages
+import { PlacesPage } from '../pages/places/places';
+import { PlacePage } from '../pages/places/place/place';
+import { AddPlacePage } from '../pages/places/add-place/add-place';
+import { SetLocationPage } from '../pages/places/set-location/set-location';
+
+// Angular GMAPS
+import { AgmCoreModule } from '@agm/core';
+import { Geolocation } from '@ionic-native/geolocation';
+
 // Custom Components - Loaded in declarations only.
 // - WARNING - NOT LOADED IN entryComponents
 // - LOAD INSIDE A PAGE'S .html view
@@ -91,11 +101,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SigninPage,
     SignupPage,
     ShoppingListOptionsPage,
-    RecipesOptionsPage
+    RecipesOptionsPage,
+    PlacesPage,
+    PlacesPage,
+    PlacePage,
+    AddPlacePage,
+    SetLocationPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyAXKhOyTdJ_OKgiKstevkd2wU_wEWnLmV0'
+    }),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -128,7 +146,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SigninPage,
     SignupPage,
     ShoppingListOptionsPage,
-    RecipesOptionsPage
+    RecipesOptionsPage,
+    PlacesPage,
+    PlacesPage,
+    PlacePage,
+    AddPlacePage,
+    SetLocationPage
   ],
   providers: [
     UserService,
@@ -137,6 +160,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ShoppingListService,
     RecipesService,
     AuthService,
+    Geolocation,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

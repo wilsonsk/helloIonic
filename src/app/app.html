@@ -49,6 +49,12 @@
         </button>
       </ion-item>
       <ion-item *ngIf="isAuthenticated">
+        <button ion-button (click)="onLoad(placesPage)">
+          <ion-icon name="cog"></ion-icon>
+          <h3 padding>Places App</h3>
+        </button>
+      </ion-item>
+      <ion-item *ngIf="isAuthenticated">
         <button ion-button (click)="onLoad(componentsIndepthPage)">
           <ion-icon name="cog"></ion-icon>
           <h3 padding>Components Indepth</h3>
