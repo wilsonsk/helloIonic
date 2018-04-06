@@ -24,7 +24,7 @@ export class ManageRecipePage implements OnInit {
 
   ngOnInit() {
     this.mode = this.navParams.get('mode');
-    if(this.mode === 'Edit') {
+    if(this.mode == 'Edit') {
       this.recipeIndex = this.navParams.get('index');
       this.recipe = this.recipesService.getRecipe(this.recipeIndex);
     }
@@ -32,7 +32,7 @@ export class ManageRecipePage implements OnInit {
   }
 
   private initializeForm(title=null, description=null,difficulty='Medium',ingredients=[]) {
-    if(this.mode === 'Edit') {
+    if(this.mode == 'Edit') {
       title = this.recipe.title;
       description = this.recipe.description;
       difficulty = this.recipe.difficulty;

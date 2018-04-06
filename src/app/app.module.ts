@@ -53,6 +53,9 @@ import { SetLocationPage } from '../pages/places/set-location/set-location';
 // Angular GMAPS
 import { AgmCoreModule } from '@agm/core';
 import { Geolocation } from '@ionic-native/geolocation';
+import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
+import { IonicStorageModule } from '@ionic/storage';
 
 // Custom Components - Loaded in declarations only.
 // - WARNING - NOT LOADED IN entryComponents
@@ -66,6 +69,7 @@ import { SettingsService } from '../services/settings';
 import { ShoppingListService } from '../services/shopping-list';
 import { RecipesService } from '../services/recipes';
 import { AuthService } from '../services/auth';
+import { PlacesService } from '../services/places';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -114,6 +118,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyAXKhOyTdJ_OKgiKstevkd2wU_wEWnLmV0'
     }),
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -161,6 +166,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecipesService,
     AuthService,
     Geolocation,
+    Camera,
+    PlacesService,
+    File,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
