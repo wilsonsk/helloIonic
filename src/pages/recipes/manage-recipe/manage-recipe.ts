@@ -11,7 +11,7 @@ import { RecipesService } from '../../../services/recipes';
   templateUrl: 'manage-recipe.html',
 })
 export class ManageRecipePage implements OnInit {
-  mode: 'New';
+  mode = 'New';
   selectOptions =['Easy', 'Medium', 'Hard'];
   recipeForm: FormGroup;
   recipeIndex: number;

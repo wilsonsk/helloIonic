@@ -12,7 +12,7 @@ declare var cordova: any;
 export class PlacesService {
   private places: Place[] = [];
 
-  constructor(private storage: Storage){}
+  constructor(private storage: Storage, private file: File){}
 
   addPlace(title: string, description: string, location: Location, imageUrl: string) {
     const place = new Place(title, description, location, imageUrl);
@@ -56,7 +56,7 @@ export class PlacesService {
 
   private removeFile(place: Place) {
     const currentName = place.imageUrl.replace(/^.*[\\\/]/, '');
-    File.removeFile(cordova.file.dataDirectory, currentName)
+    this.file.removeFile(cordova.file.dataDirectory, currentName)
       .then(() => {
         console.log('successfully removed file');
       })
